@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinay Santosh S. | Portfolio</title>
+    <style>
+        /* --- INDUSTRIAL MODERN THEME CSS --- */
+        :root {
+            --primary-blue: #0A2342; /* Deep Navy - Business/Trust */
+            --accent-blue: #2CA58D;  /* Teal/Green - Lean Sigma/Growth */
+            --slate-gray: #848C8E;   /* Engineering/Metal */
+            --bg-light: #F8F9FA;
+            --text-dark: #333333;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+        }
+
+        /* --- NAVIGATION --- */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(rgba(10, 35, 66, 0.9), rgba(10, 35, 66, 0.8)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80'); /* Industrial background image */
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin-bottom: 2rem;
+            color: #d1d1d1;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-blue);
+            color: var(--white);
+            padding: 10px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #1e7e6b;
+        }
+
+        /* --- SECTIONS COMMON --- */
+        section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* --- ABOUT & SKILLS --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .skills-container {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-left: 5px solid var(--accent-blue);
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: #e9ecef;
+            padding: 5px 10px;
+            border-radius: 4px;
+            margin: 5px 0;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        /* --- PROJECTS --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 15px 20px;
+        }
+
+        .card-header h3 {
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-body h4 {
+            color: var(--accent-blue);
+            margin-top: 0;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .card-body ul {
+            padding-left: 20px;
+            font-size: 0.95rem;
+            color: #555;
+        }
+
+        /* --- TIMELINE (RESUME) --- */
+        .timeline-item {
+            border-left: 2px solid var(--accent-blue);
+            padding-left: 20px;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: var(--accent-blue);
+            border-radius: 50%;
+            position: absolute;
+            left: -7px;
+            top: 5px;
+        }
+
+        .timeline-date {
+            color: var(--slate-gray);
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .timeline-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: var(--primary-blue);
+        }
+
+        /* --- CONTACT --- */
+        .contact-section {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            border-radius: 8px;
+            padding: 40px;
+        }
+
+        .contact-section h2 {
+            color: var(--white);
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 20px;
+            display: inline-block;
+        }
+
+        .contact-info {
+            font-size: 1.1rem;
+            margin-top: 20px;
+        }
+
+        .contact-info p {
+            margin: 10px 0;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #05162b;
+            color: #777;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        /* MOBILE RESPONSIVENESS */
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2rem; }
+            nav { flex-direction: column; gap: 10px; }
+            .nav-links { margin-top: 10px; }
+            .nav-links a { margin: 0 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">VINAY SANTOSH S.</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Operational Excellence &<br>Engineering Precision</h1>
+        <p>MBA Candidate & Mechanical Engineer specializing in Lean Six Sigma, Data Analytics, and Process Optimization.</p>
+        <a href="#projects" class="btn">View My Work</a>
+    </div>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-grid">
+            
+            <div>
+                <p><strong>I bridge the gap between technical blueprints and boardroom strategy.</strong></p>
+                <p>With a foundation in Mechanical Engineering and a B.E. from St. Joseph's College of Engineering (CGPA 8.15), I am now pursuing my MBA to master the business side of innovation.</p>
+                <p>I am a "Definite BLUE" personality type—analytical, organized, and detail-oriented. My experience ranges from fabricating automated pneumatic cutters to simulating complex aerodynamics using ANSYS. Currently, I am expanding my toolkit with PowerBI, Tableau, and Generative AI to drive data-backed decisions.</p>
+            </div>
+
+            <div class="skills-container" id="skills">
+                <h3>Technical & Business Toolkit</h3>
+                
+                <p><strong>Engineering & Design</strong></p>
+                <div>
+                    <span class="skill-tag">SolidWorks</span>
+                    <span class="skill-tag">CATIA V5</span>
+                    <span class="skill-tag">ANSYS Workbench</span>
+                    <span class="skill-tag">AutoCAD</span>
+                </div>
+
+                <p><strong>Data & Business</strong></p>
+                <div>
+                    <span class="skill-tag">Lean Six Sigma Green Belt</span>
+                    <span class="skill-tag">PowerBI & Tableau</span>
+                    <span class="skill-tag">Gen AI Tools</span>
+                    <span class="skill-tag">MS Excel (Planning)</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+
+            <div class="project-card">
+                <div class="card-header">
+                    <h3>SAE Drone Development</h3>
+                </div>
+                <div class="card-body">
+                    <h4>Role: Wing Design Specialist</h4>
+                    <ul>
+                        <li>Designed and fabricated a functioning drone model with a 10-member team.</li>
+                        <li>Used <strong>SolidWorks</strong> for 3D modeling of wing components.</li>
+                        <li>Passed rigorous flight testing and inspection parameters.</li>
+                        <li><strong>Result:</strong> Secured 8th Place in the Southern Region competition.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="card-header">
+                    <h3>Car Aerodynamics Optimization</h3>
+                </div>
+                <div class="card-body">
+                    <h4>Tools: ANSYS Workbench & CFD</h4>
+                    <ul>
+                        <li>Parametric optimization of road car aerodynamics to reduce drag.</li>
+                        <li>Analyzed Angle of Attack (AoA), Wing Gap, and Vortex Generators.</li>
+                        <li>Used Genetic Aggregation to find the ideal configuration.</li>
+                        <li><strong>Result:</strong> Achieved optimal lift-to-drag ratio with 16.98° AoA and 2 Vortex Generators.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="card-header">
+                    <h3>Automated Pneumatic Cutter</h3>
+                </div>
+                <div class="card-body">
+                    <h4>Tools: Fabrication, Pneumatics, CATIA</h4>
+                    <ul>
+                        <li>Designed a low-cost, automated sheet metal cutter for small industries.</li>
+                        <li>Utilized a double-acting pneumatic cylinder and 5/2 DC valve.</li>
+                        <li>Fabricated a rigid Mild Steel frame to cut 1.5mm aluminum sheets safely.</li>
+                        <li><strong>Result:</strong> Increased operator safety and dimensional cutting accuracy.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="card-header">
+                    <h3>Business Data Analytics</h3>
+                </div>
+                <div class="card-body">
+                    <h4>Tools: PowerBI & Tableau</h4>
+                    <ul>
+                        <li>Applying Lean Six Sigma principles to data visualization.</li>
+                        <li>Creating interactive dashboards to track operational efficiency and sales trends.</li>
+                        <li>Translating complex raw data into actionable business insights.</li>
+                        <li><strong>Current Focus:</strong> MBA Data Visualization Projects.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="resume">
+        <h2>Education & Certifications</h2>
+        
+        <div class="timeline-item">
+            <div class="timeline-date">2024 - Present</div>
+            <div class="timeline-title">Master of Business Administration (MBA)</div>
+            <p>Focus on Operations, Strategy, and Data Analytics.</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-date">2020 - 2024</div>
+            <div class="timeline-title">B.E. Mechanical Engineering</div>
+            <div class="timeline-date">St. Joseph's College of Engineering | CGPA: 8.15</div>
+            <p><strong>Key Coursework:</strong> Finite Element Analysis, Aerodynamics, Manufacturing Technology.</p>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-title">Certifications</div>
+            <ul style="margin-top: 10px;">
+                <li>Lean Six Sigma Green Belt (MSME)</li>
+                <li>Certified in CATIA V5 & 4D Printing</li>
+                <li>Business English Certificate (BEC) - Grade A2</li>
+                <li>Effective Data Presentation with Gen AI Tools</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="contact-section">
+            <h2>Get In Touch</h2>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:vinay11santosh@gmail.com" style="color: #2CA58D;">vinay11santosh@gmail.com</a></p>
+                <p>Phone: +91 97916 01048</p>
+                <p>Location: Chennai, India</p>
+                <p style="margin-top: 20px; font-size: 0.9rem; color: #ccc;">
+                    Open to opportunities in Operations Management, Supply Chain, and Business Analytics.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Vinay Santosh S. | Built with Engineering Precision</p>
+    </footer>
+
+</body>
+</html>

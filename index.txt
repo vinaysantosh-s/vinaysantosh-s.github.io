@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO & META TAGS -->
+    <meta name="description" content="Portfolio of Vinay Santosh S. - MBA Candidate & Mechanical Engineer specializing in Operations, CFD, Data Analytics, and EPC.">
+    <meta name="keywords" content="Vinay Santosh, Mechanical Engineer, MBA, Portfolio, EPC, Package Engineer, Piping, L&T, Lean Six Sigma, Operations Management, Supply Chain">
+    <meta name="author" content="Vinay Santosh S.">
+    
+    <!-- CUSTOM SVG FAVICON (Hexagon with VS) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><polygon points=%2250 5 95 27.5 95 72.5 50 95 5 72.5 5 27.5%22 fill=%22%230A2342%22 stroke=%22%232CA58D%22 stroke-width=%225%22/><text x=%2250%22 y=%2265%22 font-size=%2240%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22sans-serif%22 font-weight=%22bold%22>VS</text></svg>">
+
+    <title>Vinay Santosh S. | Engineering & MBA Portfolio</title>
+    
+    <style>
+        /* --- INDUSTRIAL MODERN THEME CSS --- */
+        :root {
+            --primary-blue: #0A2342;
+            --accent-blue: #2CA58D;
+            --slate-gray: #848C8E;
+            --bg-light: #F8F9FA;
+            --text-dark: #333333;
+            --white: #ffffff;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            background-image: radial-gradient(#d0d9e6 1.5px, transparent 1.5px);
+            background-size: 24px 24px;
+            overflow-x: hidden;
+        }
+
+        /* --- ANIMATION CLASSES --- */
+        .hidden {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 0.8s ease-out;
+            will-change: opacity, transform;
+        }
+
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- NAVIGATION --- */
+        header {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .nav-icon {
+            width: 28px;
+            height: 28px;
+            background-color: var(--accent-blue);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            background: linear-gradient(rgba(10, 35, 66, 0.92), rgba(10, 35, 66, 0.85)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            border-bottom: 5px solid var(--accent-blue);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+            font-weight: 800;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin-bottom: 2.5rem;
+            color: #d1d1d1;
+            font-weight: 300;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-blue);
+            color: var(--white);
+            padding: 14px 35px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(44, 165, 141, 0.4);
+        }
+
+        .btn:hover {
+            background-color: #1e7e6b;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+            padding: 14px 35px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--white);
+            color: var(--primary-blue);
+            transform: translateY(-2px);
+        }
+
+        /* --- KEY METRICS BAR --- */
+        .metrics-bar {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 35px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .metrics-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+
+        .metric-item h3 {
+            font-size: 2.8rem;
+            margin: 0;
+            color: var(--accent-blue);
+            line-height: 1;
+        }
+
+        .metric-item p {
+            margin: 8px 0 0 0;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+            color: #ccc;
+        }
+
+        /* --- LOGO STRIP --- */
+        .logo-strip {
+            background-color: white;
+            padding: 40px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .logo-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .logo-img {
+            height: 45px;
+            width: auto;
+            filter: grayscale(100%);
+            opacity: 0.5;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .logo-img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        /* --- SECTIONS --- */
+        section {
+            padding: 90px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 60px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            font-weight: 800;
+        }
+        
+        h2::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: var(--accent-blue);
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* --- ABOUT & SKILLS --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .skills-container {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+            border-left: 6px solid var(--accent-blue);
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: #e9ecef;
+            padding: 8px 16px;
+            border-radius: 6px;
+            margin: 6px 3px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            transition: transform 0.2s;
+            border: 1px solid #dee2e6;
+        }
+        
+        .skill-tag:hover {
+            transform: scale(1.05);
+            background: #d0d7de;
+            border-color: #b0c4de;
+        }
+
+        /* --- PROJECTS --- */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 35px;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 5px solid var(--primary-blue);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+
+        .card-header {
+            background-color: var(--white);
+            color: var(--primary-blue);
+            padding: 25px 25px 15px 25px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .card-header h3 {
+            margin: 0;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .card-body {
+            padding: 25px;
+            flex-grow: 1;
+        }
+
+        .card-body h4 {
+            color: var(--accent-blue);
+            margin-top: 0;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .card-body ul {
+            padding-left: 20px;
+            font-size: 0.95rem;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .card-body li {
+            margin-bottom: 10px;
+        }
+
+        /* --- THESIS CARD --- */
+        .thesis-card {
+            border-top: 5px solid #333 !important;
+        }
+        
+        .thesis-btn {
+            display: inline-block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            border: 2px solid #333;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+
+        .thesis-btn:hover {
+            background-color: #333;
+            color: white;
+        }
+
+        /* --- TIMELINE --- */
+        .timeline-item {
+            border-left: 4px solid var(--accent-blue);
+            padding-left: 30px;
+            margin-bottom: 45px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            width: 16px;
+            height: 16px;
+            background: var(--white);
+            border: 4px solid var(--accent-blue);
+            border-radius: 50%;
+            position: absolute;
+            left: -12px;
+            top: 5px;
+        }
+
+        .timeline-date {
+            color: var(--slate-gray);
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .timeline-title {
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--primary-blue);
+            margin-bottom: 5px;
+        }
+
+        /* --- CONTACT --- */
+        .contact-section {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            border-radius: 12px;
+            padding: 80px 20px;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .contact-section h2 {
+            color: var(--white);
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 20px;
+            display: inline-block;
+        }
+        
+        .contact-section h2::after { display: none; }
+
+        .contact-info {
+            font-size: 1.2rem;
+            margin-top: 30px;
+        }
+        
+        .contact-info a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+        
+        .contact-info a:hover { color: #4cdbc0; }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #05162b;
+            color: #888;
+            text-align: center;
+            padding: 40px;
+            font-size: 0.9rem;
+            border-top: 1px solid #1a2f4d;
+        }
+
+        @media (max-width: 768px) {
+            .about-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero h1 { font-size: 2.2rem; }
+            .metrics-container { gap: 40px; }
+            .metric-item { width: 45%; }
+            nav { flex-direction: column; gap: 15px; }
+            .nav-links { margin-top: 10px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+            .hero-buttons { flex-direction: column; width: 100%; max-width: 300px; }
+            .btn, .btn-outline { width: 100%; box-sizing: border-box; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <div class="nav-icon"></div>
+                VINAY SANTOSH S.
+            </div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#resume">Timeline</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1 class="hidden">Operational Excellence &<br>Engineering Precision</h1>
+        <p class="hidden" style="transition-delay: 200ms;">MBA Candidate & Mechanical Engineer specializing in Design, Process Operations, and Project Execution.</p>
+        
+        <div class="hero-buttons hidden" style="transition-delay: 400ms;">
+            <a href="#projects" class="btn">View My Work</a>
+            <a href="resume.pdf" class="btn btn-outline" download>Download CV</a>
+        </div>
+    </div>
+
+    <div class="metrics-bar">
+        <div class="metrics-container">
+            <div class="metric-item hidden">
+                <h3>8th</h3>
+                <p>National Rank (SAE)</p>
+            </div>
+            <div class="metric-item hidden" style="transition-delay: 200ms;">
+                <h3>LSS</h3>
+                <p>Green Belt Certified</p>
+            </div>
+            <div class="metric-item hidden" style="transition-delay: 400ms;">
+                <h3>Dual</h3>
+                <p>B.E. Mech + MBA</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="logo-strip hidden">
+        <div class="logo-container">
+            <img src="logo-msme.png" alt="MSME" class="logo-img">
+            <img src="logo-ansys.png" alt="Ansys" class="logo-img">
+            <img src="logo-catia.png" alt="Catia" class="logo-img">
+            <img src="logo-powerbi.png" alt="PowerBI" class="logo-img">
+            <img src="logo-solidworks.png" alt="SolidWorks" class="logo-img">
+        </div>
+    </div>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-grid">
+            <div class="hidden">
+                <div style="margin-bottom: 25px; display: inline-block;">
+                    <img src="profile.jpg" alt="Vinay Santosh S." 
+                         style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 5px solid #2CA58D; box-shadow: 0 10px 25px rgba(0,0,0,0.15);">
+                </div>
+                <p><strong>I bridge the gap between technical execution and business strategy.</strong></p>
+                <p>With a foundation in Mechanical Engineering (CGPA 8.15), I am pursuing my MBA to master operations management and structural execution. My experience spans heavy fabrication, automated pneumatic systems, and strategic market analysis.</p>
+                <p>Equipped with skills in structural design, continuous improvement (Lean Six Sigma), and data analytics, I aim to drive efficiency in large-scale EPC and manufacturing environments.</p>
+            </div>
+
+            <div class="skills-container hidden" id="skills" style="transition-delay: 200ms;">
+                <h3 style="margin-top:0; color:var(--primary-blue);">Technical Toolkit</h3>
+                
+                <p style="margin-bottom:8px; margin-top: 20px;"><strong>Engineering & Design</strong></p>
+                <div>
+                    <span class="skill-tag">SolidWorks</span>
+                    <span class="skill-tag">CATIA V5</span>
+                    <span class="skill-tag">ANSYS Workbench</span>
+                    <span class="skill-tag">AutoCAD</span>
+                </div>
+                
+                <p style="margin-bottom:8px; margin-top: 20px;"><strong>Business & Operations</strong></p>
+                <div>
+                    <span class="skill-tag">Lean Six Sigma Green Belt</span>
+                    <span class="skill-tag">PowerBI & Tableau</span>
+                    <span class="skill-tag">CRM & Strategy</span>
+                    <span class="skill-tag">Digital Marketing</span>
+                </div>
+
+                <p style="margin-bottom:8px; margin-top: 20px;"><strong>Programming & Logic</strong></p>
+                <div>
+                    <span class="skill-tag">Python & C</span>
+                    <span class="skill-tag">Grasshopper JS</span>
+                    <span class="skill-tag">AI Automation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Featured Projects</h2>
+        <div class="project-grid">
+
+            <!-- Card 1 -->
+            <div class="project-card hidden">
+                <div class="card-header">
+                    <h3>SAE Drone Development</h3>
+                </div>
+                <div style="width: 100%; height: 250px; overflow: hidden; background-color: #f4f4f4; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: center;">
+                    <img src="drone-view.gif" alt="SAE Drone Wing Design" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                </div>
+                <div class="card-body">
+                    <h4>Role: Wing Design Specialist</h4>
+                    <ul>
+                        <li>Designed and fabricated a functioning drone model within a collaborative team.</li>
+                        <li>Utilized <strong>SolidWorks</strong> for the 3D modeling of complex wing components.</li>
+                        <li>Secured 8th Place in the Southern Region following rigorous operational flight testing.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 2: Pneumatic Cutter Refined -->
+            <div class="project-card hidden" style="transition-delay: 200ms;">
+                <div class="card-header">
+                    <h3>Automated Pneumatic Cutter</h3>
+                </div>
+                <div style="width: 100%; height: 250px; overflow: hidden; background-color: #f4f4f4; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: center;">
+                    <img src="cutter-prototype.jpg" alt="Pneumatic Cutter" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="card-body">
+                    <h4>Tools: Fabrication & Pneumatics</h4>
+                    <ul>
+                        <li>Designed a compact, hinge-like automated sheet metal cutter tailored for thin-sheet precision.</li>
+                        <li>Actuated via a single pneumatic cylinder mechanism, replacing slower hydraulic models.</li>
+                        <li>Dramatically increased operator safety metrics and dimensional cutting accuracy.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 3: TNPL Case Study Included -->
+            <div class="project-card hidden">
+                <div class="card-header">
+                    <h3>Strategic Business Analysis</h3>
+                </div>
+                <div style="width: 100%; height: 250px; background-color: #f4f4f4; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: center; color: #888; font-weight: bold; font-size: 0.9rem;">
+                    [Market Analysis & Strategy]
+                </div>
+                <div class="card-body">
+                    <h4>Focus: Operations & Risk Strategy</h4>
+                    <ul>
+                        <li>Conducted a strategic operational analysis and case study on <strong>TNPL</strong> (Tamil Nadu Newsprint and Papers).</li>
+                        <li>Developed disaster risk management protocols based on complex crowd-control incident modeling.</li>
+                        <li>Executed competitive <strong>SWOT analysis</strong> frameworks for the commercial FMCG industry.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="project-card hidden" style="transition-delay: 200ms;">
+                <div class="card-header">
+                    <h3>Production Optimization</h3>
+                </div>
+                <div style="width: 100%; height: 250px; background-color: #f4f4f4; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: center; color: #888; font-weight: bold; font-size: 0.9rem;">
+                    [Optimal Production Models]
+                </div>
+                <div class="card-body">
+                    <h4>Focus: Throughput & Scaling</h4>
+                    <ul>
+                        <li>Developed the <strong>"Optimal Production"</strong> framework to systematically maximize manufacturing throughput.</li>
+                        <li>Engineered the <strong>"Hermes Agent"</strong> framework, leveraging logical intelligence to automate workflows.</li>
+                        <li>Integrated operations methodologies to streamline heavy engineering data metrics.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="project-card hidden">
+                <div class="card-header">
+                    <h3>Supply Chain Optimization</h3>
+                </div>
+                <div style="width: 100%; height: 250px; overflow: hidden; background-color: #f4f4f4; border-bottom: 1px solid #eee; display: flex; align-items: center; justify-content: center;">
+                    <img src="dashboard-view.jpg" alt="Power BI Dashboard" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+                </div>
+                <div class="card-body">
+                    <h4>Focus: Logistics & Delivery Analytics</h4>
+                    <ul>
+                        <li>Analyzed 180,000+ shipment records using the <strong>DataCo Global Supply Chain dataset</strong>.</li>
+                        <li>Identified root causes of regional delivery delays using Lean Six Sigma principles.</li>
+                        <li>Created a PowerBI framework to theoretically reduce late delivery risk by 15%.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="project-card thesis-card hidden" style="transition-delay: 200ms;">
+                <div class="card-header" style="background: #333; color: white;">
+                    <h3>📄 Academic Research</h3>
+                </div>
+                <div class="card-body">
+                    <h4 style="color: #333;">Parametric Aero-Optimization</h4>
+                    <p style="font-size: 0.9rem; color: #666; font-style: italic; margin-bottom: 15px;">"A comprehensive study on reducing drag coefficient using Genetic Aggregation algorithms."</p>
+                    <div style="font-size: 0.85rem; color: #444; margin-bottom: 20px;">
+                        <p><strong>Abstract:</strong> Investigated the correlation between wing gap variance and vortex generation to improve stability utilizing ANSYS CFD analysis.</p>
+                    </div>
+                    <a href="research-paper.pdf" class="thesis-btn" download>
+                        ⬇ Download Whitepaper (PDF)
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="resume">
+        <h2>Education & Credentials</h2>
+        
+        <div class="timeline-item hidden">
+            <div class="timeline-date">2024 - Present</div>
+            <div class="timeline-title">Master of Business Administration (MBA)</div>
+            <p>Core Focus: Operations Management, Strategic Risk, and Business Analytics.</p>
+        </div>
+
+        <div class="timeline-item hidden" style="transition-delay: 200ms;">
+            <div class="timeline-date">2020 - 2024</div>
+            <div class="timeline-title">B.E. Mechanical Engineering</div>
+            <div class="timeline-date">St. Joseph's College of Engineering | CGPA: 8.15</div>
+            <p>Core Focus: Finite Element Analysis, Aerodynamics, Manufacturing Technology.</p>
+        </div>
+
+        <div class="timeline-item hidden" style="transition-delay: 400ms;">
+            <div class="timeline-title">Certifications & Advanced Coursework</div>
+            <ul style="margin-top: 10px; color: #555; list-style-type: none; padding-left: 0;">
+                <li style="margin-bottom: 5px;">✅ <strong>Quality:</strong> Lean Six Sigma Green Belt (MSME)</li>
+                <li style="margin-bottom: 5px;">✅ <strong>Engineering:</strong> NPTEL AutoCAD Analysis; Certified in CATIA V5 & 4D Printing; Udemy Advanced CAD Modeling</li>
+                <li style="margin-bottom: 5px;">✅ <strong>Strategy & Business:</strong> NPTEL Customer Relationship Management (CRM); NPTEL Emotional Intelligence; Udemy Digital Marketing</li>
+                <li style="margin-bottom: 5px;">✅ <strong>Tech & Programming:</strong> Python & C (Coursera); Grasshopper JS (Google); Business English Certificate (BEC - A2)</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact" class="hidden">
+        <div class="contact-section">
+            <h2>Get In Touch</h2>
+            <div class="contact-info">
+                <p>Email: <a href="mailto:vinay11santosh@gmail.com" style="color: #66d9c0;">vinay11santosh@gmail.com</a></p>
+                <p>Phone: +91 97916 01048</p>
+                <p>Location: Chennai, India</p>
+                <div style="margin-top: 35px;">
+                    <a href="https://www.linkedin.com/in/vinay-santosh-28037b186" target="_blank" 
+                       style="background-color: #0077b5; color: white; padding: 15px 30px; border-radius: 4px; display: inline-block; font-size: 1.1rem; box-shadow: 0 4px 6px rgba(0,0,0,0.2);">
+                       Connect on LinkedIn
+                    </a>
+                </div>
+                <p style="margin-top: 30px; font-size: 0.95rem; color: #aabdd1; font-weight: 600;">
+                    Actively seeking opportunities in Mechanical Package Engineering, Structural Design, EPC Operations, and Supply Chain.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Vinay Santosh S. | Built with Engineering Precision</p>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el));
+    </script>
+
+</body>
+</html>
